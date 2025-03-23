@@ -1,10 +1,17 @@
 # Draw It or Lose It - Web-Based Game Application
 
-This project is a Java 11-based implementation of the game _Draw It or Lose It_, originally developed as an Android app and now reimagined for a web-based, multi-platform environment.
+> Team-based drawing game reimagined for the web—built with Java 11
+> and clean code principles.
+> **Developed for SNHU CS 230: Operating Platforms**
+
+This project is an implementation of the game _Draw It or Lose It_,
+originally developed as an Android app. It is now reimagined for a web-based,
+multi-platform environment.
 
 ## 🧩 Project Overview
 
-_Draw It or Lose It_ is a drawing-based guessing game where teams compete to solve puzzles. The application supports:
+_Draw It or Lose It_ is a drawing-based guessing game where teams compete
+to solve puzzles. The application supports:
 
 - Multiple teams
 - Multiple players per team
@@ -36,4 +43,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
+file for details.

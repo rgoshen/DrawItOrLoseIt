@@ -2,7 +2,9 @@
 
 ## 📜 Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in this project a respectful and harassment-free experience for everyone.
+In the interest of fostering an open and welcoming environment, we as contributors
+and maintainers pledge to make participation in this project a respectful and
+harassment-free experience for everyone.
 
 ## 🙌 Our Standards
 
