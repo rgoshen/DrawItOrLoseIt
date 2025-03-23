@@ -1,6 +1,6 @@
 # Draw It or Lose It - Web-Based Game Application
 
-> Team-based drawing game reimagined for the web—built with Java 11
+> Team-based drawing game reimagined for the web—built with Java 8
 > and clean code principles.
 > **Developed for SNHU CS 230: Operating Platforms**
 
@@ -20,7 +20,7 @@ to solve puzzles. The application supports:
 
 ## 🛠️ Technologies Used
 
-- **Java 11**
+- **Java 8**
 - Object-Oriented Programming Principles (Inheritance, Encapsulation, Composition)
 - Singleton Design Pattern
 
