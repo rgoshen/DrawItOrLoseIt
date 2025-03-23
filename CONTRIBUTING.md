@@ -13,7 +13,7 @@ Thank you for your interest in contributing to _Draw It or Lose It_!
 
 ## Coding Standards
 
-- Use Java 11 syntax and conventions
+- Use Java 8 syntax and conventions
 - Follow object-oriented principles
 - Name classes and methods clearly
 - Add comments where necessary
