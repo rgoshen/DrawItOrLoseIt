@@ -21,10 +21,13 @@ jobs:
       - name: Create output directory
         run: mkdir -p out
 
-      - name: Compile with javac
+      - name: Compile source and test files
         run: javac -cp "lib/*" -d out $(find src -name "*.java") $(find test -name "*.java")
 
-      - name: Run JUnit tests
+      - name: Run all JUnit tests
         run: |
           mkdir -p test-results
-          java -cp "lib/*:out" org.junit.runner.JUnitCore com.gamingroom.GameServiceTest
+          for test in $(find test -name '*Test.java' | sed 's|test/||; s|.java$||; s|/|.|g'); do
+            echo "Running: $test"
+            java -cp "lib/*:out" org.junit.runner.JUnitCore $test || exit 1
+          done
