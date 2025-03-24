@@ -82,4 +82,13 @@ public class GameServiceTest {
 		assertEquals("IDs should increment by 1.", 1, secondId - firstId);
 	}
 
+	@Test
+	public void testGetNextPlayerIdIncrementsCorrectly() {
+		long firstId = gameService.getNextPlayerId();
+		long secondId = gameService.getNextPlayerId();
+
+		assertTrue("Second ID should be greater than first.", secondId > firstId);
+		assertEquals("IDs should increment by 1.", 1, secondId - firstId);
+	}
+
 }

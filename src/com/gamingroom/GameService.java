@@ -144,6 +144,15 @@ public class GameService {
 	}
 
 	/**
+	 * Returns the next available player ID.
+	 *
+	 * @return the next player ID
+	 */
+	public long getNextPlayerId() {
+		return nextPlayerId++;
+	}
+
+	/**
 	 * Clears all games and resets ID counter.
 	 * <p>
 	 * This is intended for testing purposes only to ensure a clean state between
