@@ -1,0 +1,27 @@
+name: Java CI (JUnit)
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+
+      - name: Compile with javac
+        run: javac -cp "lib/*" -d out $(find src -name "*.java") $(find test -name "*.java")
+
+      - name: Run JUnit tests
+        run: |
+          mkdir -p test-results
+          java -cp "lib/*:out" org.junit.runner.JUnitCore com.gamingroom.GameServiceTest
