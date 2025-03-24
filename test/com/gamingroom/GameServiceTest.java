@@ -40,4 +40,16 @@ public class GameServiceTest {
 		assertEquals("Game names should match.", first.getName(), second.getName());
 		assertSame("Duplicate call should return the same game instance.", first, second);
 	}
+
+	@Test
+	public void testGetGame_ExistingName() {
+		String name = "ExistingGame";
+		gameService.addGame(name);
+
+		Game found = gameService.getGame(name);
+
+		assertNotNull("Game should be found by name after being added.", found);
+		assertEquals("Game name should match the requested name.", name, found.getName());
+	}
+
 }
