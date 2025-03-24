@@ -1,8 +1,8 @@
 package com.gamingroom;
 
 /**
- * Abstract superclass for entities that share a unique ID and name. This is
- * extended by Game, Team, and Player classes.
+ * Abstract base class representing a general entity with an ID and name. This
+ * class is extended by Game, Team, and Player.
  * 
  * @author richardgoshen
  */
@@ -23,9 +23,9 @@ public abstract class Entity {
 	}
 
 	/**
-	 * Returns the ID of the entity.
+	 * Returns the unique identifier of the entity.
 	 *
-	 * @return the ID value
+	 * @return the ID of the entity
 	 */
 	public long getId() {
 		return id;
@@ -34,7 +34,7 @@ public abstract class Entity {
 	/**
 	 * Returns the name of the entity.
 	 *
-	 * @return the name value
+	 * @return the name of the entity
 	 */
 	public String getName() {
 		return name;
@@ -43,7 +43,7 @@ public abstract class Entity {
 	/**
 	 * Returns a string representation of the entity.
 	 *
-	 * @return formatted string with ID and name
+	 * @return a formatted string with class name, ID, and name
 	 */
 	@Override
 	public String toString() {
