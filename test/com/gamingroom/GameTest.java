@@ -8,6 +8,10 @@ import static org.junit.Assert.assertSame;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Unit tests for Game team management and name uniqueness.
+ */
+
 public class GameTest {
 
 	private Game game;

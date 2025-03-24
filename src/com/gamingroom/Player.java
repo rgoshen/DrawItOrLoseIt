@@ -1,45 +1,20 @@
 package com.gamingroom;
 
 /**
- * A simple class to hold information about a player
- * <p>
- * Notice the overloaded constructor that requires
- * an id and name to be passed when creating.
- * Also note that no mutators (setters) defined so
- * these values cannot be changed once a player is
- * created.
- * </p>
+ * A class to represent a player in the game. Extends Entity to inherit common
+ * id and name properties.
+ * 
  * @author coce@snhu.edu
- *
  */
-public class Player {
-	long id;
-	String name;
-	
-	/*
-	 * Constructor with an identifier and name
+public class Player extends Entity {
+
+	/**
+	 * Constructs a new Player with a unique ID and name.
+	 *
+	 * @param id   the unique ID of the player
+	 * @param name the name of the player
 	 */
 	public Player(long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public String toString() {
-		return "Player [id=" + id + ", name=" + name + "]";
+		super(id, name);
 	}
 }
