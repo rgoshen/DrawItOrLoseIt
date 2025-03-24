@@ -21,19 +21,19 @@ public class GameService {
 	private static long nextGameId = 1;
 
 	// Singleton instance
-    private static GameService instance;
+	private static GameService instance;
 
-    // Private constructor to prevent instantiation
-    private GameService() {}
+	// Private constructor to prevent instantiation
+	private GameService() {
+	}
 
-    // Public method to get the singleton instance
-    public static GameService getInstance() {
-        if (instance == null) {
-            instance = new GameService();
-        }
-        return instance;
-    }
-
+	// Public method to get the singleton instance
+	public static GameService getInstance() {
+		if (instance == null) {
+			instance = new GameService();
+		}
+		return instance;
+	}
 
 	/**
 	 * Construct a new game instance
@@ -44,15 +44,15 @@ public class GameService {
 	public Game addGame(String name) {
 
 		// ✅ Iterate through existing games
-	    for (Game g : games) {
-	        if (g.getName().equalsIgnoreCase(name)) {
-	            return g; // Return existing game
-	        }
-	    }
+		for (Game g : games) {
+			if (g.getName().equalsIgnoreCase(name)) {
+				return g; // Return existing game
+			}
+		}
 
-	    // ✅ If no match is found, create a new game
-	    Game game = new Game(nextGameId++, name);
-	    games.add(game);
+		// ✅ If no match is found, create a new game
+		Game game = new Game(nextGameId++, name);
+		games.add(game);
 
 		// return the new game instance to the caller
 		return game;
@@ -63,13 +63,14 @@ public class GameService {
 	 * <p>
 	 * Scope is package/local for testing purposes.
 	 * </p>
+	 * 
 	 * @param index index position in the list to return
 	 * @return requested game instance
 	 */
 	Game getGame(int index) {
 		return games.get(index);
 	}
-	
+
 	/**
 	 * Returns the game instance with the specified id.
 	 * 
@@ -82,12 +83,12 @@ public class GameService {
 		Game game = null;
 
 		// Use iterator to find game by ID
-	    for (Game g : games) {
-	        if (g.getId() == id) {
-	            game = g;  // Assign found instance to local variable
-	            break;      // Stop searching once found
-	        }
-	    }
+		for (Game g : games) {
+			if (g.getId() == id) {
+				game = g; // Assign found instance to local variable
+				break; // Stop searching once found
+			}
+		}
 
 		return game;
 	}
@@ -104,12 +105,12 @@ public class GameService {
 		Game game = null;
 
 		// Use iterator to find game by name
-	    for (Game g : games) {
-	        if (g.getName().equalsIgnoreCase(name)) {
-	            game = g;  // Assign found instance to local variable
-	            break;      // Stop searching once found
-	        }
-	    }
+		for (Game g : games) {
+			if (g.getName().equalsIgnoreCase(name)) {
+				game = g; // Assign found instance to local variable
+				break; // Stop searching once found
+			}
+		}
 
 		return game;
 	}
@@ -121,5 +122,16 @@ public class GameService {
 	 */
 	public int getGameCount() {
 		return games.size();
+	}
+
+	/**
+	 * Clears all games and resets ID counter.
+	 * <p>
+	 * This is intended for testing purposes only to ensure a clean state between
+	 * test cases.
+	 */
+	void clear() {
+		games.clear();
+		nextGameId = 1;
 	}
 }
