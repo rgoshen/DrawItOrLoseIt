@@ -43,4 +43,13 @@ public class TeamTest {
 		assertEquals("Only one player should exist after duplicate adds.", 1, team.getPlayerCount());
 	}
 
+	@Test
+	public void testGetPlayerExistingName() {
+		team.addPlayer("RetrieveMe");
+		Player found = team.getPlayer("RetrieveMe");
+
+		assertNotNull("Expected to find a player after being added.", found);
+		assertEquals("RetrieveMe", found.getName());
+	}
+
 }
