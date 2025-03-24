@@ -4,7 +4,7 @@ package com.gamingroom;
  * Abstract superclass for entities that share a unique ID and name. This is
  * extended by Game, Team, and Player classes.
  * 
- * Author: Rick Goshen
+ * @author richardgoshen
  */
 
 public abstract class Entity {
