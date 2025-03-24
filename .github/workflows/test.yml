@@ -17,6 +17,9 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
+		  
+	  - name: Create output directory
+	    run: mkdir -p out
 
       - name: Compile with javac
         run: javac -cp "lib/*" -d out $(find src -name "*.java") $(find test -name "*.java")
