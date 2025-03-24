@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -70,6 +71,15 @@ public class GameServiceTest {
 		assertNotNull("Expected to find game by valid ID.", found);
 		assertEquals("Returned game should have matching ID.", id, found.getId());
 		assertEquals("Returned game should have the same name.", "FindByIdGame", found.getName());
+	}
+
+	@Test
+	public void testGetNextTeamIdIncrementsCorrectly() {
+		long firstId = gameService.getNextTeamId();
+		long secondId = gameService.getNextTeamId();
+
+		assertTrue("Second ID should be greater than first.", secondId > firstId);
+		assertEquals("IDs should increment by 1.", 1, secondId - firstId);
 	}
 
 }
