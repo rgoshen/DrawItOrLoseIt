@@ -37,7 +37,11 @@ public class GameService {
 	private GameService() {
 	}
 
-	// Public method to get the singleton instance
+	/**
+	 * Returns the singleton instance of GameService.
+	 *
+	 * @return the shared GameService instance
+	 */
 	public static GameService getInstance() {
 		if (instance == null) {
 			instance = new GameService();
