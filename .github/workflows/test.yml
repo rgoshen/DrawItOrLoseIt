@@ -17,14 +17,15 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-		  
-	  - name: Create output directory
-	    run: mkdir -p out
 
-      - name: Compile with javac
-        run: javac -cp "lib/*" -d out $(find src -name "*.java") $(find test -name "*.java")
+      - name: Create directories
+        run: mkdir -p out lib test-results
 
-      - name: Run JUnit tests
+      - name: Download JUnit and Hamcrest
         run: |
-          mkdir -p test-results
-          java -cp "lib/*:out" org.junit.runner.JUnitCore com.gamingroom.GameServiceTest
+          curl -L -o lib/junit-4.13.2.jar https://search.maven.org/remotecontent?filepath=junit/junit/4.13.2/junit-4.13.2.jar
+          curl -L -o lib/hamcrest-core-1.3.jar https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+
+      - name: Compile source and test files
+        run: |
+          bash -c 'javac -cp "lib/*" -d out $(find src -name "*.java") $(find test -name "*.java")'
