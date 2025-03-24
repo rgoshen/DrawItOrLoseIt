@@ -5,6 +5,7 @@ package com.gamingroom;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
 import org.junit.Before;
@@ -50,6 +51,13 @@ public class TeamTest {
 
 		assertNotNull("Expected to find a player after being added.", found);
 		assertEquals("RetrieveMe", found.getName());
+	}
+
+	@Test
+	public void testGetPlayerNonExistingName() {
+		Player result = team.getPlayer("Ghost");
+
+		assertNull("Expected null when player name does not exist.", result);
 	}
 
 }
