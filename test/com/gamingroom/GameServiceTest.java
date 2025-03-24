@@ -2,6 +2,7 @@ package com.gamingroom;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
 import org.junit.Before;
@@ -50,6 +51,13 @@ public class GameServiceTest {
 
 		assertNotNull("Game should be found by name after being added.", found);
 		assertEquals("Game name should match the requested name.", name, found.getName());
+	}
+
+	@Test
+	public void testGetGame_NonExistingName() {
+		Game result = gameService.getGame("ThisGameDoesNotExist");
+
+		assertNull("Expected null when requesting a non-existing game name.", result);
 	}
 
 }
