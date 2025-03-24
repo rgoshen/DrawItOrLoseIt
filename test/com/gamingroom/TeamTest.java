@@ -22,7 +22,7 @@ public class TeamTest {
 	}
 
 	@Test
-	public void testAddPlayer_UniqueName() {
+	public void testAddPlayerUniqueName() {
 		Player player = team.addPlayer("PlayerOne");
 
 		assertNotNull("Player should not be null when added with a unique name.", player);
