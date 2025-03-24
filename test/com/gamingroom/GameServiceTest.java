@@ -22,7 +22,7 @@ public class GameServiceTest {
 	}
 
 	@Test
-	public void testAddGame_UniqueName() {
+	public void testAddGameUniqueName() {
 		String gameName = "UniqueGame";
 		Game game = gameService.addGame(gameName);
 
@@ -31,7 +31,7 @@ public class GameServiceTest {
 	}
 
 	@Test
-	public void testAddGame_DuplicateName() {
+	public void testAddGameDuplicateName() {
 		String name = "DuplicateGame";
 		Game first = gameService.addGame(name);
 		Game second = gameService.addGame(name);
@@ -43,7 +43,7 @@ public class GameServiceTest {
 	}
 
 	@Test
-	public void testGetGame_ExistingName() {
+	public void testGetGameExistingName() {
 		String name = "ExistingGame";
 		gameService.addGame(name);
 
@@ -54,7 +54,7 @@ public class GameServiceTest {
 	}
 
 	@Test
-	public void testGetGame_NonExistingName() {
+	public void testGetGameNonExistingName() {
 		Game result = gameService.getGame("ThisGameDoesNotExist");
 
 		assertNull("Expected null when requesting a non-existing game name.", result);
