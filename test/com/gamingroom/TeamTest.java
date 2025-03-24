@@ -5,6 +5,7 @@ package com.gamingroom;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,19 @@ public class TeamTest {
 
 		assertNotNull("Player should not be null when added with a unique name.", player);
 		assertEquals("PlayerOne", player.getName());
+	}
+
+	@Test
+	public void testAddPlayerDuplicateName() {
+		Player first = team.addPlayer("DuplicatePlayer");
+		Player second = team.addPlayer("DuplicatePlayer");
+
+		assertNotNull("First player creation should not return null.", first);
+		assertNotNull("Second call should return an existing player, not null.", second);
+		assertEquals("Player names should match.", first.getName(), second.getName());
+		assertSame("Should return the same instance for duplicate name.", first, second);
+
+		assertEquals("Only one player should exist after duplicate adds.", 1, team.getPlayerCount());
 	}
 
 }

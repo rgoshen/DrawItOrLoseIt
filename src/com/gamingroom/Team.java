@@ -46,4 +46,8 @@ public class Team extends Entity {
 		return player;
 	}
 
+	int getPlayerCount() {
+		return players.size();
+	}
+
 }
