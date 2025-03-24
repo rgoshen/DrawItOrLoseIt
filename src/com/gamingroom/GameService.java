@@ -20,6 +20,16 @@ public class GameService {
 	 */
 	private static long nextGameId = 1;
 
+	/*
+	 * Holds the next team identifier
+	 */
+	private static long nextTeamId = 1;
+
+	/*
+	 * Holds the next player identifier
+	 */
+	private static long nextPlayerId = 1;
+
 	// Singleton instance
 	private static GameService instance;
 
@@ -43,14 +53,14 @@ public class GameService {
 	 */
 	public Game addGame(String name) {
 
-		// ✅ Iterate through existing games
+		// Iterate through existing games
 		for (Game g : games) {
 			if (g.getName().equalsIgnoreCase(name)) {
 				return g; // Return existing game
 			}
 		}
 
-		// ✅ If no match is found, create a new game
+		// If no match is found, create a new game
 		Game game = new Game(nextGameId++, name);
 		games.add(game);
 
@@ -122,6 +132,24 @@ public class GameService {
 	 */
 	public int getGameCount() {
 		return games.size();
+	}
+
+	/**
+	 * Returns the next available team ID.
+	 *
+	 * @return the next team ID
+	 */
+	public long getNextTeamId() {
+		return ++nextTeamId;
+	}
+
+	/**
+	 * Returns the next available player ID.
+	 *
+	 * @return the next player ID
+	 */
+	public long getNextPlayerId() {
+		return nextPlayerId++;
 	}
 
 	/**
