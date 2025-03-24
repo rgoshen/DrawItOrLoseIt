@@ -60,4 +60,16 @@ public class GameServiceTest {
 		assertNull("Expected null when requesting a non-existing game name.", result);
 	}
 
+	@Test
+	public void testGetGameById() {
+		Game created = gameService.addGame("FindByIdGame");
+		long id = created.getId();
+
+		Game found = gameService.getGame(id);
+
+		assertNotNull("Expected to find game by valid ID.", found);
+		assertEquals("Returned game should have matching ID.", id, found.getId());
+		assertEquals("Returned game should have the same name.", "FindByIdGame", found.getName());
+	}
+
 }
